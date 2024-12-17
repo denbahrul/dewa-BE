@@ -31,7 +31,7 @@ class WeddingInspirationControllers {
 
       const data = await weddingInspirationServices.create(body);
       res.json({
-        message: "Wedding Inspiration Created",
+        message: "Inspirasi wedding ditambahkan",
         data,
       });
     } catch (error) {
