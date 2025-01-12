@@ -10,8 +10,12 @@ class ProductServices {
     return await productRepositories.findAll();
   }
 
-  async findById(packageId: number) {
-    return await productRepositories.findById(packageId);
+  async findById(productId: number) {
+    return await productRepositories.findById(productId);
+  }
+
+  async delete(productId: number) {
+    return await productRepositories.delete(productId);
   }
 }
 

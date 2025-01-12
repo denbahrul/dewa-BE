@@ -7,3 +7,4 @@ export const Product = Router();
 Product.post("/", upload.single("imageUrl"), productControllers.create);
 Product.get("/", productControllers.findAll);
 Product.get("/:id", productControllers.findById);
+Product.delete("/delete/:id", productControllers.delete);

@@ -13,6 +13,10 @@ class TentPackageServices {
   async findById(packageId: number) {
     return await tentPackageRepositories.findById(packageId);
   }
+
+  async delete(packageId: number) {
+    return await tentPackageRepositories.delete(packageId);
+  }
 }
 
 export default new TentPackageServices();

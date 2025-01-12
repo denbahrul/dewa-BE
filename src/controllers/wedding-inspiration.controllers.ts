@@ -42,6 +42,24 @@ class WeddingInspirationControllers {
       });
     }
   }
+
+  async delete(req: Request, res: Response) {
+    try {
+      const inspirationId = +req.params.id;
+      const data = await weddingInspirationServices.delete(inspirationId);
+      res.json({
+        message: `Product ${data.title} was deleted`,
+        data,
+      });
+    } catch (error) {
+      console.log(error);
+
+      const err = error as Error;
+      res.status(500).json({
+        message: err.message,
+      });
+    }
+  }
 }
 
 export default new WeddingInspirationControllers();

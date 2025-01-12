@@ -9,6 +9,10 @@ class WeddingInspirationServices {
   async create(dto: addWeddingInspirationDTO) {
     return await weddingInspirationRepositories.create(dto);
   }
+
+  async delete(inspirationId: number) {
+    return await weddingInspirationRepositories.delete(inspirationId);
+  }
 }
 
 export default new WeddingInspirationServices();

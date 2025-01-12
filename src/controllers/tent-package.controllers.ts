@@ -59,6 +59,24 @@ class TentPackageControllers {
       });
     }
   }
+
+  async delete(req: Request, res: Response) {
+    try {
+      const packageId = +req.params.id;
+      const data = await tentPackageServices.delete(packageId);
+      res.json({
+        message: `Product ${data.name} was deleted`,
+        data,
+      });
+    } catch (error) {
+      console.log(error);
+
+      const err = error as Error;
+      res.status(500).json({
+        message: err.message,
+      });
+    }
+  }
 }
 
 export default new TentPackageControllers();

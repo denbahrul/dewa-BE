@@ -10,6 +10,13 @@ class WeddingInspirationRepositories {
       data,
     });
   }
+  async delete(inspirationId: number) {
+    return await prisma.weddingInspiration.delete({
+      where: {
+        id: inspirationId,
+      },
+    });
+  }
 }
 
 export default new WeddingInspirationRepositories();

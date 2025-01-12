@@ -19,6 +19,14 @@ class TentPackageRepositories {
       },
     });
   }
+
+  async delete(packageId: number) {
+    return prisma.tentPackage.delete({
+      where: {
+        id: packageId,
+      },
+    });
+  }
 }
 
 export default new TentPackageRepositories();

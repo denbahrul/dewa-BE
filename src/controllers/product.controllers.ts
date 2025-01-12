@@ -59,6 +59,24 @@ class ProductControllers {
       });
     }
   }
+
+  async delete(req: Request, res: Response) {
+    try {
+      const productId = +req.params.id;
+      const data = await productServices.delete(productId);
+      res.json({
+        message: `Product ${data.name} was deleted`,
+        data,
+      });
+    } catch (error) {
+      console.log(error);
+
+      const err = error as Error;
+      res.status(500).json({
+        message: err.message,
+      });
+    }
+  }
 }
 
 export default new ProductControllers();
