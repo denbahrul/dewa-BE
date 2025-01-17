@@ -2,7 +2,7 @@ import { Router } from "express";
 import { UserRoute } from "./user-router";
 import { WeddingInspirationRoute } from "./wedding-inspiration.routers";
 import { Product } from "./product.router";
-import { TentPackageRoute } from "./tend-package.router";
+import { TentPackageRoute } from "./tent-package.router";
 
 export const router = Router();
 
